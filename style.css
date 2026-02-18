@@ -1,86 +1,52 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.container {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    max-width: 500px;
-    width: 100%;
-}
-
-h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.tagline {
-    color: #666;
-    margin-bottom: 30px;
-    font-size: 1rem;
-}
-
-#weather-display {
+style.css
+/* Forecast Section */
+.forecast-section {
     margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px solid #eee;
 }
 
-.loading {
-    color: #667eea;
-    font-size: 1.1rem;
+.forecast-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
-.weather-info {
-    animation: fadeIn 0.5s ease-in;
+/* Forecast Grid */
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Forecast Cards */
+.forecast-card {
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
 }
 
-.city-name {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 10px;
+.forecast-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
-.temperature {
-    font-size: 3.5rem;
-    color: #667eea;
+.forecast-temp {
+    font-size: 1.5rem;
     font-weight: bold;
-    margin: 20px 0;
+    color: #667eea;
+    margin: 10px 0;
 }
 
-.description {
-    font-size: 1.3rem;
-    color: #555;
+.forecast-desc {
+    font-size: 0.9rem;
     text-transform: capitalize;
-    margin-bottom: 15px;
 }
 
-.weather-icon {
-    width: 100px;
-    height: 100px;
+@media (max-width: 768px) {
+    .forecast-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
